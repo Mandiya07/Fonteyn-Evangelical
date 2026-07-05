@@ -1,0 +1,162 @@
+{
+  "sermons": [],
+  "events": [],
+  "ministries": [
+    {
+      "id": "m1",
+      "name": "Fathers' Fellowship",
+      "description": "Supporting and empowering fathers in the faith.",
+      "leader": {
+        "name": "Rev. L. S. Mnisi",
+        "role": "Senior Pastor",
+        "bio": "A dedicated leader of the church.",
+        "photo": null,
+        "contact": "pastor@fec.org"
+      },
+      "gallery": [],
+      "schedule": "Mondays at 5:30 PM",
+      "activities": [
+        "Prayer meetings",
+        "Mentorship"
+      ]
+    },
+    {
+      "id": "m2",
+      "name": "Mothers' Fellowship",
+      "description": "Nurturing and guiding women and mothers.",
+      "leader": {
+        "name": "Sarah Dlamini",
+        "role": "Women's Leader",
+        "bio": "A passionate advocate for families.",
+        "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300",
+        "contact": "women@fec.org"
+      },
+      "gallery": [],
+      "schedule": "Saturdays at 11:00 AM",
+      "activities": [
+        "Prayer meetings",
+        "Discipleship"
+      ]
+    },
+    {
+      "id": "m3",
+      "name": "Youth Fellowship",
+      "description": "Empowering the next generation.",
+      "leader": {
+        "name": "Youth Leader",
+        "role": "Youth Leader",
+        "bio": "A passionate mentor for youth.",
+        "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300",
+        "contact": "youth@fec.org"
+      },
+      "gallery": [],
+      "schedule": "Saturdays at 1:00 PM",
+      "activities": [
+        "Bible study",
+        "Social events"
+      ]
+    },
+    {
+      "id": "m4",
+      "name": "Children's Ministry",
+      "description": "Guiding children to Christ.",
+      "leader": {
+        "name": "Children's Leader",
+        "role": "Children's Leader",
+        "bio": "Passionate about children.",
+        "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300",
+        "contact": "kids@fec.org"
+      },
+      "gallery": [],
+      "schedule": "Sundays",
+      "activities": [
+        "Sunday school"
+      ]
+    },
+    {
+      "id": "m5",
+      "name": "Family Fellowship",
+      "description": "Strengthening families in the faith.",
+      "leader": {
+        "name": "Family Leader",
+        "role": "Family Leader",
+        "bio": "Focuses on family unity.",
+        "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300",
+        "contact": "family@fec.org"
+      },
+      "gallery": [],
+      "schedule": "Monthly",
+      "activities": [
+        "Family gatherings"
+      ]
+    },
+    {
+      "id": "m6",
+      "name": "Evangelism Ministry",
+      "description": "Spreading the gospel.",
+      "leader": {
+        "name": "Evangelism Leader",
+        "role": "Evangelism Leader",
+        "bio": "Passionate about spreading the gospel.",
+        "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300",
+        "contact": "evangelism@fec.org"
+      },
+      "gallery": [],
+      "schedule": "Weekly",
+      "activities": [
+        "Outreach"
+      ]
+    },
+    {
+      "id": "m7",
+      "name": "Care Ministry",
+      "description": "Serving those in need.",
+      "leader": {
+        "name": "Care Leader",
+        "role": "Care Leader",
+        "bio": "Dedicated to caring for others.",
+        "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300",
+        "contact": "care@fec.org"
+      },
+      "gallery": [],
+      "schedule": "As needed",
+      "activities": [
+        "Visitation"
+      ]
+    },
+    {
+      "id": "m8",
+      "name": "Single Adults Fellowship",
+      "description": "Supporting single adults.",
+      "leader": {
+        "name": "Singles Leader",
+        "role": "Singles Leader",
+        "bio": "Mentoring single adults.",
+        "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300",
+        "contact": "singles@fec.org"
+      },
+      "gallery": [],
+      "schedule": "Monthly",
+      "activities": [
+        "Discussion groups"
+      ]
+    }
+  ],
+  "photoAlbums": [],
+  "videos": [],
+  "livestreams": [],
+  "prayerRequests": [],
+  "donations": [],
+  "counselingBookings": [],
+  "blogPosts": [],
+  "members": [],
+  "outreachVolunteers": [],
+  "pastorContacts": [],
+  "contactInquiries": [],
+  "notifications": [],
+  "announcements": [],
+  "securityConfig": {
+    "sslEnforced": true,
+    "blacklistWords": "viagra, cialis, casino, free cash, cheap drugs, click here to buy, casino-online"
+  }
+}

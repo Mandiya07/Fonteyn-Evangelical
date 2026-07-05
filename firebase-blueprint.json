@@ -1,0 +1,35 @@
+{
+  "entities": {
+    "sermon": {
+      "title": "Sermon",
+      "description": "A sermon entity",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "author": { "type": "string" }
+      },
+      "required": ["title", "date", "author"]
+    },
+    "event": {
+      "title": "Event",
+      "description": "A church event",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "date": { "type": "string", "format": "date" }
+      },
+      "required": ["title", "date"]
+    }
+  },
+  "firestore": {
+    "/sermons/{sermonId}": {
+      "schema": "sermon",
+      "description": "Sermons collection"
+    },
+    "/events/{eventId}": {
+      "schema": "event",
+      "description": "Events collection"
+    }
+  }
+}

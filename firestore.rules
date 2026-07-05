@@ -1,0 +1,27 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helpers
+    function isSignedIn() { return request.auth != null; }
+    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+    
+    // Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    match /sermons/{sermonId} {
+      allow read: if true;
+      allow write: if isSignedIn(); // Simplified for now, needs refinement
+    }
+
+    match /events/{eventId} {
+      allow read: if true;
+      allow write: if isSignedIn(); // Simplified for now, needs refinement
+    }
+  }
+}
