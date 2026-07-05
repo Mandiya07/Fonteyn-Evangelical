@@ -542,7 +542,7 @@ export default function MinistriesMediaManager({
                       </p>
                       {m.leader?.name && (
                         <div className="bg-white p-1.5 rounded-lg border border-slate-200 text-[9px] text-slate-500 font-sans inline-flex items-center gap-1.5 mt-1.5">
-                          {m.leader.photo && <img src={m.leader.photo} alt={m.leader.name} className="h-5 w-5 rounded-full object-cover" />}
+                          {m.leader.photo && <img src={m.leader.photo} alt={m.leader.name} loading="lazy" className="h-5 w-5 rounded-full object-cover" />}
                           <span>Leader: <span className="font-semibold text-slate-700">{m.leader.name}</span> ({m.leader.role})</span>
                         </div>
                       )}

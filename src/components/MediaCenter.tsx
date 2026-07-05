@@ -328,7 +328,7 @@ export default function MediaCenter({ language }: MediaCenterProps) {
                     >
                       <div className="aspect-video bg-slate-200 relative overflow-hidden flex-shrink-0">
                         {video.platform === 'YouTube' ? (
-                          <img src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`} alt={video.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                          <img src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`} alt={video.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center bg-slate-800">
                              <VideoIcon className="text-slate-600 h-12 w-12" />
@@ -436,7 +436,7 @@ export default function MediaCenter({ language }: MediaCenterProps) {
                         <div key={stream.id} className="bg-white border border-slate-100 rounded-xl p-3 flex gap-3 shadow-sm hover:shadow-md transition-all cursor-pointer">
                           <div className="w-24 h-16 bg-slate-200 rounded-lg overflow-hidden flex-shrink-0 relative">
                             {stream.platform === 'YouTube' ? (
-                              <img src={`https://img.youtube.com/vi/${stream.videoId}/mqdefault.jpg`} alt={stream.title} className="w-full h-full object-cover" />
+                              <img src={`https://img.youtube.com/vi/${stream.videoId}/mqdefault.jpg`} alt={stream.title} loading="lazy" className="w-full h-full object-cover" />
                             ) : (
                               <div className="w-full h-full flex items-center justify-center bg-slate-800"><VideoIcon className="text-slate-600 h-6 w-6"/></div>
                             )}
@@ -518,6 +518,7 @@ export default function MediaCenter({ language }: MediaCenterProps) {
           <img 
             src={lightboxImage} 
             alt="Enlarged view" 
+            loading="lazy"
             className="max-w-[90vw] max-h-[90vh] object-contain select-none pointer-events-none rounded-sm shadow-2xl"
             onContextMenu={(e) => e.preventDefault()}
             draggable="false"

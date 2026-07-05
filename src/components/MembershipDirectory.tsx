@@ -497,6 +497,7 @@ Please print this pledge form, complete it prayerfully, and return it to any pas
                     src={currentUser.photo || "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=300"} 
                     alt={currentUser.name} 
                     className="w-full h-full object-cover" 
+                    loading="lazy"
                   />
                 </div>
                 <div>
@@ -988,7 +989,7 @@ Please print this pledge form, complete it prayerfully, and return it to any pas
 
                           <div className="pt-4 border-t border-slate-200/50 flex items-center justify-between">
                             <div className="flex items-center space-x-2">
-                              <img src={min.leader?.photo} alt={min.leader?.name} className="w-8 h-8 rounded-full object-cover border border-slate-200" />
+                              <img src={min.leader?.photo} alt={min.leader?.name} className="w-8 h-8 rounded-full object-cover border border-slate-200" loading="lazy" />
                               <div>
                                 <p className="text-[10px] font-heading font-bold text-slate-800">{min.leader?.name}</p>
                                 <p className="text-[8px] text-slate-400 font-mono uppercase">{min.leader?.role}</p>
@@ -1044,7 +1045,7 @@ Please print this pledge form, complete it prayerfully, and return it to any pas
                       return (
                         <div key={ev.id} className="bg-slate-50 border border-slate-150 rounded-2xl overflow-hidden flex flex-col justify-between">
                           <div className="aspect-video w-full relative bg-slate-200 overflow-hidden shrink-0">
-                            <img src={ev.image} alt={ev.title} className="w-full h-full object-cover" />
+                            <img src={ev.image} alt={ev.title} className="w-full h-full object-cover" loading="lazy" />
                             <span className="absolute top-3 right-3 bg-primary-950/85 backdrop-blur-md text-white text-[8px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full">
                               {ev.category}
                             </span>
@@ -1275,6 +1276,7 @@ Please print this pledge form, complete it prayerfully, and return it to any pas
                                   alt={mem.name} 
                                   className="w-full h-full object-cover" 
                                   referrerPolicy="no-referrer"
+                                  loading="lazy"
                                 />
                               </div>
 
@@ -1409,6 +1411,7 @@ Please print this pledge form, complete it prayerfully, and return it to any pas
                                           alt={mem.name}
                                           className="w-full h-full object-cover"
                                           referrerPolicy="no-referrer"
+                                          loading="lazy"
                                         />
                                       </div>
 

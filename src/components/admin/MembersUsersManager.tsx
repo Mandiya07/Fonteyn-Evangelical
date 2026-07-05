@@ -389,6 +389,7 @@ export default function MembersUsersManager({ members, onRefresh }: MembersUsers
                       <img
                         src={m.photo || "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=300"}
                         alt={m.name}
+                        loading="lazy"
                         className="h-10 w-10 rounded-full object-cover shrink-0 border border-slate-200"
                       />
                       <div>

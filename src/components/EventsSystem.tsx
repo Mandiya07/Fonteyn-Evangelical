@@ -415,6 +415,7 @@ export default function EventsSystem({ language }: EventsSystemProps) {
                   <img
                     src={selectedEvent.image || "https://images.unsplash.com/photo-1511180590220-bb06972294ba?auto=format&fit=crop&q=80&w=600"}
                     alt={selectedEvent.title}
+                    loading="lazy"
                     className="w-full h-full object-cover opacity-60"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-950/40 to-transparent"></div>

@@ -11,7 +11,7 @@ export default defineConfig(() => {
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'pwa-192x192.jpg', 'pwa-512x512.jpg'],
+        includeAssets: ['favicon.ico', 'pwa-192x192.webp', 'pwa-512x512.webp'],
         manifest: {
           name: 'Fonteyn Evangelical Church',
           short_name: 'FEC Eswatini',
@@ -22,19 +22,19 @@ export default defineConfig(() => {
           start_url: '/',
           icons: [
             {
-              src: 'pwa-192x192.jpg',
+              src: 'pwa-192x192.webp',
               sizes: '192x192',
-              type: 'image/jpeg'
+              type: 'image/webp'
             },
             {
-              src: 'pwa-512x512.jpg',
+              src: 'pwa-512x512.webp',
               sizes: '512x512',
-              type: 'image/jpeg'
+              type: 'image/webp'
             },
             {
-              src: 'pwa-512x512.jpg',
+              src: 'pwa-512x512.webp',
               sizes: '512x512',
-              type: 'image/jpeg',
+              type: 'image/webp',
               purpose: 'any maskable'
             }
           ]
