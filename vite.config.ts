@@ -10,6 +10,7 @@ export default defineConfig(() => {
       react(),
       tailwindcss(),
       VitePWA({
+        injectRegister: false,
         registerType: 'autoUpdate',
         includeAssets: ['favicon.ico', 'pwa-192x192.webp', 'pwa-512x512.webp'],
         manifest: {

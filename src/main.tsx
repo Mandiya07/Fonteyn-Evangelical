@@ -4,6 +4,36 @@ import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
+// Global error handlers to capture unhandled runtime errors, resource loading failures, and unhandled promise rejections
+if (typeof window !== 'undefined') {
+  window.addEventListener('error', (event) => {
+    // Check if this is an asset load error (e.g. stylesheet, script) or a runtime script execution error
+    const target = event.target as any;
+    if (target && (target.tagName === 'SCRIPT' || target.tagName === 'LINK' || target.tagName === 'IMG')) {
+      const url = target.src || target.href;
+      console.error(`[Global Resource Load Error] Failed to load resource from URL: ${url}`, {
+        tagName: target.tagName,
+        outerHTML: target.outerHTML
+      });
+    } else {
+      console.error('[Global Runtime Error] Captured unhandled exception:', {
+        message: event.message,
+        filename: event.filename,
+        lineno: event.lineno,
+        colno: event.colno,
+        error: event.error
+      });
+    }
+  }, true); // Use capture phase to intercept resource loading errors (which do not bubble)
+
+  window.addEventListener('unhandledrejection', (event) => {
+    console.error('[Global Unhandled Rejection] Captured unhandled promise rejection:', {
+      reason: event.reason,
+      promise: event.promise
+    });
+  });
+}
+
 class ErrorBoundary extends Component<{children: ReactNode}, {hasError: boolean, error: Error | null}> {
   props: {children: ReactNode};
   state = { hasError: false, error: null as Error | null };
