@@ -49,7 +49,8 @@ if (typeof window !== 'undefined') {
       message.includes('ResizeObserver') ||
       message.includes('NotAllowedError') ||
       message.includes('autoplay') ||
-      message.includes('play()');
+      message.includes('play()') ||
+      message.includes('WebSocket');
 
     if (isBenign) {
       console.warn('[Global Unhandled Rejection] Ignored benign promise rejection:', message);
