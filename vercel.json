@@ -2,12 +2,6 @@
   "version": 2,
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" },
-    { "source": "/assets/(.*)", "destination": "/dist/assets/$1" },
-    { "source": "/pwa-(.*)", "destination": "/dist/pwa-$1" },
-    { "source": "/favicon.ico", "destination": "/dist/favicon.ico" },
-    { "source": "/manifest.webmanifest", "destination": "/dist/manifest.webmanifest" },
-    { "source": "/sw.js", "destination": "/dist/sw.js" },
-    { "source": "/workbox-(.*)", "destination": "/dist/workbox-$1" },
-    { "source": "/(.*)", "destination": "/dist/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
