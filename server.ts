@@ -26,7 +26,7 @@ if (process.env.GEMINI_API_KEY) {
   console.warn("GEMINI_API_KEY is not defined. AI features will run in offline simulation mode.");
 }
 
-const DB_FILE = path.join(process.cwd(), "db.json");
+const DB_FILE = process.env.VERCEL ? path.join("/tmp", "db.json") : path.join(process.cwd(), "db.json");
 
 // Helper for Database persistence
 interface ChurchDatabase {

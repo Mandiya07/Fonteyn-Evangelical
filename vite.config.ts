@@ -9,76 +9,6 @@ export default defineConfig(() => {
     plugins: [
       react(),
       tailwindcss(),
-      VitePWA({
-        injectRegister: false,
-        registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'pwa-192x192.webp', 'pwa-512x512.webp'],
-        manifest: {
-          name: 'Fonteyn Evangelical Church',
-          short_name: 'FEC Eswatini',
-          description: 'Digital home of Fonteyn Evangelical Church in Mbabane, Eswatini',
-          theme_color: '#0f172a',
-          background_color: '#0f172a',
-          display: 'standalone',
-          start_url: '/',
-          icons: [
-            {
-              src: 'pwa-192x192.webp',
-              sizes: '192x192',
-              type: 'image/webp'
-            },
-            {
-              src: 'pwa-512x512.webp',
-              sizes: '512x512',
-              type: 'image/webp'
-            },
-            {
-              src: 'pwa-512x512.webp',
-              sizes: '512x512',
-              type: 'image/webp',
-              purpose: 'any maskable'
-            }
-          ]
-        },
-        workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,woff,woff2}'],
-          runtimeCaching: [
-            {
-              urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-              handler: 'CacheFirst',
-              options: {
-                cacheName: 'google-fonts-stylesheets',
-                expiration: {
-                  maxEntries: 10,
-                  maxAgeSeconds: 60 * 60 * 24 * 365
-                }
-              }
-            },
-            {
-              urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
-              handler: 'CacheFirst',
-              options: {
-                cacheName: 'google-fonts-webfonts',
-                expiration: {
-                  maxEntries: 30,
-                  maxAgeSeconds: 60 * 60 * 24 * 365
-                }
-              }
-            },
-            {
-              urlPattern: /^https:\/\/images\.unsplash\.com\/.*/i,
-              handler: 'StaleWhileRevalidate',
-              options: {
-                cacheName: 'unsplash-images',
-                expiration: {
-                  maxEntries: 50,
-                  maxAgeSeconds: 60 * 60 * 24 * 30
-                }
-              }
-            }
-          ]
-        }
-      })
     ],
     resolve: {
       alias: {
@@ -89,7 +19,7 @@ export default defineConfig(() => {
       target: 'esnext',
       minify: 'esbuild',
       cssCodeSplit: true,
-      sourcemap: false,
+      sourcemap: true,
       rollupOptions: {
         output: {
           manualChunks(id) {
