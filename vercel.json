@@ -1,14 +1,7 @@
 {
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api" },
-    { "src": "/assets/(.*)", "dest": "/dist/assets/$1" },
-    { "src": "/pwa-(.*)", "dest": "/dist/pwa-$1" },
-    { "src": "/manifest.webmanifest", "dest": "/dist/manifest.webmanifest" },
-    { "src": "/favicon.ico", "dest": "/dist/favicon.ico" },
-    { "src": "/registerSW.js", "dest": "/dist/registerSW.js" },
-    { "src": "/sw.js", "dest": "/dist/sw.js" },
-    { "src": "/workbox-(.*)", "dest": "/dist/workbox-$1" },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/dist/index.html" }
+  "version": 2,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
