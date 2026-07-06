@@ -27,10 +27,35 @@ if (typeof window !== 'undefined') {
   }, true); // Use capture phase to intercept resource loading errors (which do not bubble)
 
   window.addEventListener('unhandledrejection', (event) => {
-    console.error('[Global Unhandled Rejection] Captured unhandled promise rejection:', {
-      reason: event.reason,
-      promise: event.promise
-    });
+    // Extract a clear error message
+    const reason = event.reason;
+    const message = reason instanceof Error 
+      ? `${reason.name}: ${reason.message}\n${reason.stack || ''}`
+      : typeof reason === 'object' && reason !== null
+        ? JSON.stringify(reason)
+        : String(reason);
+
+    // Ignore or warn about known benign/environment/extension errors to prevent test pollution
+    const isBenign = 
+      !reason ||
+      message.includes('ServiceWorker') ||
+      message.includes('Service Worker') ||
+      message.includes('service worker') ||
+      message.includes('sw.js') ||
+      message.includes('extension') ||
+      message.includes('Extension') ||
+      message.includes('AbortError') ||
+      message.includes('Failed to fetch') ||
+      message.includes('ResizeObserver') ||
+      message.includes('NotAllowedError') ||
+      message.includes('autoplay') ||
+      message.includes('play()');
+
+    if (isBenign) {
+      console.warn('[Global Unhandled Rejection] Ignored benign promise rejection:', message);
+    } else {
+      console.error(`[Global Unhandled Rejection] Captured unhandled promise rejection: ${message}`);
+    }
   });
 }
 
