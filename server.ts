@@ -273,7 +273,6 @@ saveDb(db);
 app.use((req, res, next) => {
   // Always enforce standard OWASP HTTP security headers
   res.setHeader("X-Content-Type-Options", "nosniff");
-  res.setHeader("X-Frame-Options", "SAMEORIGIN");
   res.setHeader("X-XSS-Protection", "1; mode=block");
   res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
 
@@ -998,8 +997,24 @@ app.post("/api/prayer-requests/:id/pray", (req, res) => {
 });
 
 // 5. Donations API
-app.get("/api/donations", requireRole(["Pastor", "Admin"]), (req, res) => {
-  res.json(db.donations);
+app.get("/api/donations", (req, res) => {
+  const activeRoleHeader = req.headers["x-admin-role"];
+  const activeRole = Array.isArray(activeRoleHeader) ? activeRoleHeader[0] : (activeRoleHeader || "Member");
+  const isPrivileged = ["Pastor", "Admin", "Elder"].includes(activeRole);
+
+  if (isPrivileged) {
+    res.json(db.donations);
+  } else {
+    // Only return public info for recent donations
+    const filtered = (db.donations || []).map(d => ({
+      id: d.id,
+      amount: d.amount,
+      purpose: d.purpose,
+      date: d.date,
+      donorName: "Anonymous Giver"
+    }));
+    res.json(filtered);
+  }
 });
 
 app.post("/api/donations", (req, res) => {
