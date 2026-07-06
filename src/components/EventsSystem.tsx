@@ -413,7 +413,7 @@ export default function EventsSystem({ language }: EventsSystemProps) {
                 
                 <div className="h-44 bg-primary-950 relative">
                   <img
-                    src={selectedEvent.image || "https://images.unsplash.com/photo-1511180590220-bb06972294ba?auto=format&fit=crop&q=80&w=600"}
+                    src={selectedEvent.image || "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600"}
                     alt={selectedEvent.title}
                     loading="lazy"
                     className="w-full h-full object-cover opacity-60"

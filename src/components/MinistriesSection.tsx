@@ -135,7 +135,7 @@ export default function MinistriesSection({ language }: MinistriesProps) {
                 {/* Hero / Gallery Header */}
                 <div className="h-64 sm:h-80 relative overflow-hidden group">
                   <img
-                    src={selectedMinistry.gallery[0] || "https://images.unsplash.com/photo-1511180590220-bb06972294ba?auto=format&fit=crop&q=80&w=1200"}
+                    src={selectedMinistry.gallery[0] || "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1200"}
                     alt={selectedMinistry.name}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

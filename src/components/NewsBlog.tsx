@@ -332,7 +332,7 @@ export default function NewsBlog({ language }: NewsBlogProps) {
       case "Pastor Articles":
         return "https://images.unsplash.com/photo-1504052434569-70ad585e5151?auto=format&fit=crop&q=70&w=600&fm=webp";
       case "Testimonies":
-        return "https://images.unsplash.com/photo-1511180590220-bb06972294ba?auto=format&fit=crop&q=70&w=600&fm=webp";
+        return "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=70&w=600&fm=webp";
       case "Ministry Updates":
         return "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=70&w=600&fm=webp";
       case "Community News":
